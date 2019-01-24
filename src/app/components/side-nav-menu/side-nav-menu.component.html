@@ -1,3 +1,15 @@
-<p>
-  side-nav-menu works!
-</p>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav fixedInViewport="true" mode="side" ngClass="sideNav"
+    [opened]="!(isHandset$ | async)">
+    <div>
+      <img src="../../../assets/images/logo.png" alt="logo" ngClass="logo">
+    </div>
+    <mat-nav-list class="ul-itensMenu">
+      <ul *ngFor="let item of itensMenu">
+        <a (click)="navigateRoute(item.routerLink)" class="itensMenu">
+          <i [class]="item.icon" aria-hidden="true"></i>
+        </a>
+      </ul>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>
