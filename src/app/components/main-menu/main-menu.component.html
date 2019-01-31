@@ -1,0 +1,8 @@
+<mat-toolbar ngClass="app-background-color">
+  <mat-toolbar-row>
+    <div *ngFor="let item of menu">
+      <a class="item-menu" href="">{{ item.label }}</a>
+      <span>|</span>
+    </div>    
+  </mat-toolbar-row>
+</mat-toolbar>

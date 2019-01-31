@@ -1,6 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav fixedInViewport="true" mode="side" ngClass="sideNav"
-    [opened]="!(isHandset$ | async)">
+  <mat-sidenav fixedInViewport="true" mode="side" ngClass="sideNav" [opened]="!(isHandset$ | async)">
     <div>
       <img src="../../../assets/images/logo.png" alt="logo" ngClass="logo">
     </div>
@@ -12,4 +11,5 @@
       </ul>
     </mat-nav-list>
   </mat-sidenav>
+  <app-main-menu></app-main-menu>
 </mat-sidenav-container>

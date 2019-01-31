@@ -10,3 +10,15 @@ $color-app-warn: mat-palette($mat-red);
 $app-theme: mat-light-theme($app-color-primary, $app-color-accent, $color-app-warn);
 
 @include angular-material-theme($app-theme);
+
+.app-background-color {
+    background-color: #fffece !important;
+}
+
+body {
+    background-color: #fffece !important;
+}
+
+a {
+    text-decoration: none;
+}

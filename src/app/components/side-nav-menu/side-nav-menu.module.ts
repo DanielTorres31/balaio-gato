@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material';
 import { MatListModule } from '@angular/material/list';
+import { MainMenuModule } from '../main-menu/main-menu.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatToolbarModule,
     MatListModule,
+    MainMenuModule,
   ],
   exports: [
     SideNavMenuComponent,
