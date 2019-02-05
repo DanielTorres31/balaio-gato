@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-side-nav-menu',
@@ -8,7 +9,9 @@ import { Route, Router } from '@angular/router';
 })
 export class SideNavMenuComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  mobile: boolean;
+
+  constructor(private router: Router, private app: AppComponent) { }
 
   itensMenu = [
     {name: 'Sobre', routerLink: 'teste1', icon: 'fa fa-address-card'},
@@ -16,9 +19,10 @@ export class SideNavMenuComponent implements OnInit {
     {name: 'Apadrinhamento', routerLink: 'teste3', icon: 'fa fa-address-card'},
     {name: 'Voluntariado', routerLink: 'teste1', icon: 'fa fa-address-card'},
     {name: 'Como Ajudar', routerLink: 'teste1', icon: 'fa fa-address-card'},
-  ]
+  ];
 
   ngOnInit() {
+    this.mobile = this.app.mobile;
   }
 
   navigateRoute(route: string) {

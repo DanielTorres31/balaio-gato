@@ -1,8 +1,19 @@
-<mat-toolbar ngClass="app-background-color">
-  <mat-toolbar-row>
-    <div *ngFor="let item of menu">
-      <a class="item-menu" href="">{{ item.label }}</a>
-      <span>|</span>
-    </div>    
-  </mat-toolbar-row>
-</mat-toolbar>
+<div *ngIf="!mobile">
+  <mat-toolbar ngClass="app-background-color">
+    <mat-toolbar-row>
+      <div *ngFor="let item of menu; let i = index">
+        <a class="item-menu" href="">{{ item.label }}</a>
+        <span *ngIf="menu.length != i + 1">|</span>
+      </div>
+      <span class="space"></span>
+      <div class="div-rede-social">
+        <i class="fa fa-facebook-square rede-social" aria-hidden="true"></i>
+        <i class="fa fa-instagram rede-social" aria-hidden="true"></i>
+        <i class="fa fa-youtube rede-social" aria-hidden="true"></i>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+<div *ngIf="mobile">
+  Mobile
+</div>

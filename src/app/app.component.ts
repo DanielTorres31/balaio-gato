@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,27 @@ import { Component } from '@angular/core';
     </div>
   `
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  public mobile: boolean;
+
   title = 'balaio-gato';
+
+
+  ngOnInit() {
+    this.isMobile(window.innerWidth);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.isMobile(event.target.innerWidth);
+  }
+
+  private isMobile(windowWidth: number) {
+    if (windowWidth > 800) {
+       this.mobile = false;
+    } else {
+      this.mobile = true;
+    }
+  }
 }
